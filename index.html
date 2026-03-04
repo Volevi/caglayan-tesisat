@@ -829,28 +829,116 @@
     100% { opacity: 1; transform: scale(1); }
   }
 
-  /* RESPONSIVE */
+  /* RESPONSIVE — TABLET */
   @media (max-width: 960px) {
+    nav ul { display: none; }
     .services-wrap { grid-template-columns: 1fr 1fr; }
     .reviews-grid { grid-template-columns: 1fr; }
-    .hours-section { grid-template-columns: 1fr; }
+    .hours-section { grid-template-columns: 1fr; gap: 3rem; }
     .feature-band { grid-template-columns: 1fr 1fr; }
-    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .stats-row { flex-wrap: wrap; }
-    .stat-block { border-radius: 0; }
-    nav ul { display: none; }
+    .stat-block { flex: 1 1 calc(50% - 1px); border-radius: 0; }
   }
 
+  /* RESPONSIVE — MOBILE */
   @media (max-width: 600px) {
-    .services-wrap { grid-template-columns: 1fr; }
-    .feature-band { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .section { padding: 5rem 5%; }
-    .hours-section { padding: 4rem 5%; }
-    .cta-section { padding: 6rem 5%; }
-    footer { padding: 3rem 5% 2rem; }
+    /* NAV */
+    nav { padding: 0 4%; }
+    .logo { font-size: 0.95rem; }
+
+    /* HERO */
+    .hero {
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 80px;
+      padding-bottom: 2rem;
+      min-height: auto;
+      overflow-x: hidden;
+    }
+    .hero-bg-text { display: none; }
+    .hero-eyebrow { flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+    .tag { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
+    .reviews-tag { font-size: 0.72rem; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 10vw, 3.2rem);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+    .hero h1 .outline { -webkit-text-stroke: 1px rgba(255,255,255,0.35); }
+    .hero-desc { font-size: 0.88rem; margin-bottom: 1.5rem; max-width: 100%; }
+    .hero-ctas { flex-direction: column; gap: 0.7rem; }
+    .hero-ctas a { justify-content: center; width: 100%; text-align: center; }
+    .hero-bottom { gap: 1.5rem; }
+
+    /* STATS */
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 2.5rem;
+      flex-wrap: unset;
+    }
+    .stat-block {
+      flex: unset;
+      width: 100%;
+      min-width: 0;
+      padding: 1.2rem 1rem;
+      border-radius: 0;
+      overflow: hidden;
+    }
+    .stat-block:first-child { border-radius: 6px 0 0 0; }
+    .stat-block:nth-child(2) { border-radius: 0 6px 0 0; }
+    .stat-block:nth-child(3) { border-radius: 0 0 0 6px; }
+    .stat-block:last-child { border-radius: 0 0 6px 0; }
+    .stat-num { font-size: 1.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .stat-label { font-size: 0.62rem; white-space: normal; }
+    .live-status { font-size: 0.62rem; margin-top: 0.4rem; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 5%; }
     hr { margin: 0 5%; }
-    .hero { padding-left: 5%; padding-right: 5%; }
+
+    /* SERVICES */
+    .services-wrap { grid-template-columns: 1fr; }
+    .svc { padding: 1.5rem; }
+
+    /* HOURS */
+    .hours-section { padding: 4rem 5%; flex-direction: column; display: flex; gap: 2rem; }
+    .sec-sub { max-width: 100%; }
+    .hour-row { padding: 0.8rem 1rem; }
+
+    /* FEATURE BAND */
+    .feature-band { grid-template-columns: 1fr 1fr; padding: 3rem 5%; gap: 1px; }
+    .feat { padding: 1.5rem 1.2rem; }
+
+    /* REVIEWS */
+    .reviews-section { padding: 4rem 5%; }
+    .reviews-grid { grid-template-columns: 1fr; }
+
+    /* CTA */
+    .cta-section { padding: 5rem 5%; }
+    .cta-section h2 { font-size: clamp(2rem, 9vw, 3rem); letter-spacing: -0.02em; }
+    .cta-btns { flex-direction: column; align-items: stretch; }
+    .cta-btns a { justify-content: center; }
+    .btn-wa-xl, .btn-phone-xl { width: 100%; justify-content: center; }
+
+    /* FOOTER */
+    footer { padding: 3rem 5% 2rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+
+    /* FLOATING WA */
+    .float-wa { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
+    .float-wa::before { display: none; }
+  }
+
+  /* Extra small */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 2.1rem; }
+    .stat-block { padding: 1rem 0.8rem; }
+    .feature-band { grid-template-columns: 1fr; }
   }
 </style>
 </head>
